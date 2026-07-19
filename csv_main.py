@@ -22,8 +22,6 @@ def main():
     #-----------------------------------------
     # 국내주식 CSV 업데이트
     #-----------------------------------------
-    DOMESTIC_STOCK_CSV_PATH = Path("data/csv/domestic_stock/price_history.csv")
-    
     domestic_stock_df = pd.read_csv(
         DOMESTIC_STOCK_CSV_PATH,
         dtype={"ticker": str}
