@@ -5,6 +5,10 @@ on:
   schedule:
     - cron: '*/30 * * * *'
 
+concurrency:
+  group: repository-write
+  cancel-in-progress: false
+
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -14,6 +18,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -42,5 +48,11 @@ jobs:
 
           if ! git diff --cached --quiet; then
             git commit -m "Update charts"
-            git push
+            
+            # 최신 main 반영
+            git pull --rebase origin main
+
+            # push
+            git push origin main
+            
           fi
