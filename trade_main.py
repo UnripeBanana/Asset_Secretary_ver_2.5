@@ -1,4 +1,4 @@
-from config import NOTION_DOMESTIC_STOCK_TRADE_DB_ID, NOTION_KRX_GOLD_TRADE_DB_ID, NOTION_DOMESTIC_BOND_ETF_TRADE_DB_ID
+from config.notion import NOTION_DOMESTIC_STOCK_TRADE_DB_ID, NOTION_KRX_GOLD_TRADE_DB_ID, NOTION_DOMESTIC_BOND_ETF_TRADE_DB_ID
 from notion.get_all_pages import get_all_pages
 from collections import defaultdict
 from trade.fifo import process_fifo
@@ -6,8 +6,8 @@ from trade.fifo import process_fifo
 #-----------------------------------------
 # 국내주식 거래내역 DB 업데이트
 #-----------------------------------------
-from domestic_stock_trade.read import read_domestic_stock_trade
-from domestic_stock_trade.update import update_domestic_stock_trade_DB
+from assets.domestic_stock.trade.reader import read_domestic_stock_trade
+from assets.domestic_stock.trade.updater import update_domestic_stock_trade_DB
 
 # 각 페이지별로 데이터 읽기
 domestic_stock_groups = defaultdict(list)
@@ -28,8 +28,8 @@ update_domestic_stock_trade_DB(domestic_stock_results)
 #-----------------------------------------
 # KRX 금현물 거래내역 DB 업데이트
 #-----------------------------------------
-from krx_gold_trade.read import read_krx_gold_trade
-from krx_gold_trade.update import update_krx_gold_trade_DB
+from assets.krx_gold.trade.reader import read_krx_gold_trade
+from assets.krx_gold.trade.updater import update_krx_gold_trade_DB
 
 # 각 페이지별로 데이터 읽기
 krx_gold_groups = defaultdict(list)
@@ -50,8 +50,8 @@ update_krx_gold_trade_DB(krx_gold_results)
 #-----------------------------------------
 # 국내채권 ETF 거래내역 DB 업데이트
 #-----------------------------------------
-from domestic_bond_etf_trade.read import read_domestic_bond_etf_trade
-from domestic_bond_etf_trade.update import update_domestic_bond_etf_trade_DB
+from assets.domestic_bond_etf.trade.reader import read_domestic_bond_etf_trade
+from assets.domestic_bond_etf.trade.updater import update_domestic_bond_etf_trade_DB
 
 # 각 페이지별로 데이터 읽기
 domestic_bond_etf_groups = defaultdict(list)
