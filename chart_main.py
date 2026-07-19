@@ -1,4 +1,5 @@
 from config.notion import NOTION_DOMESTIC_STOCK_INFO_DB_ID
+from config.csv import DOMESTIC_STOCK_CSV_PATH
 from notion.get_all_pages import get_all_pages
 from pathlib import Path
 import pandas as pd
@@ -21,10 +22,6 @@ from notion.initialize_info_page import initialize_stock_page
 
 # 나중에는
 # make_chart 함수 하나, delete_chart 하나 update_chart 하나 이렇게 구성하는 것도 괜찮을 듯. 깔끔하게
-
-DOMESTIC_STOCK_CSV_PATH = Path("data/csv/domestic_stock/price_history.csv") 
-# 실제 데이터 경로 : Path("data/csv/domestic_stock/price_history.csv") 
-# 테스트용 경로 : Path("data/csv/domestic_stock/test_data.csv")
 
 for page in get_all_pages(NOTION_DOMESTIC_STOCK_INFO_DB_ID):
     # 티커 데이터 추출
