@@ -23,7 +23,7 @@ def main():
     #-----------------------------------------
     # 국내주식 CSV 업데이트
     #-----------------------------------------
-    DOMESTIC_STOCK_CSV_PATH = Path("domestic_stock_info/csv/price_history.csv")
+    DOMESTIC_STOCK_CSV_PATH = Path("data/csv/domestic_stock/price_history.csv")
     
     domestic_stock_df = pd.read_csv(
         DOMESTIC_STOCK_CSV_PATH,
@@ -51,7 +51,7 @@ def main():
     #-----------------------------------------
     # KRX 금현물 CSV 업데이트
     #-----------------------------------------
-    KRX_GOLD_CSV_PATH = Path("krx_gold_info/csv/price_history.csv")
+    KRX_GOLD_CSV_PATH = Path("data/csv/krx_gold/price_history.csv")
     
     krx_gold_df = pd.read_csv(
         KRX_GOLD_CSV_PATH,
@@ -76,7 +76,7 @@ def main():
     #-----------------------------------------
     # 국내 채권 ETF는 데이터를 받아오는 구조가 국내 주식과 동일함. 따라서 같은 함수를 적용.
     
-    DOMESTIC_BOND_ETF_CSV_PATH = Path("domestic_bond_etf_info/csv/price_history.csv")
+    DOMESTIC_BOND_ETF_CSV_PATH = Path("data/csv/domestic_bond_etf/price_history.csv")
     
     domestic_bond_etf_df = pd.read_csv(
         DOMESTIC_BOND_ETF_CSV_PATH,
