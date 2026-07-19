@@ -48,8 +48,6 @@ def main():
     #-----------------------------------------
     # KRX 금현물 CSV 업데이트
     #-----------------------------------------
-    KRX_GOLD_CSV_PATH = Path("data/csv/krx_gold/price_history.csv")
-    
     krx_gold_df = pd.read_csv(
         KRX_GOLD_CSV_PATH,
         dtype={"ticker": str}
