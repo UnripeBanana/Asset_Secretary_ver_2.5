@@ -1,16 +1,16 @@
-from config import NOTION_DOMESTIC_STOCK_INFO_DB_ID, NOTION_KRX_GOLD_INFO_DB_ID, NOTION_DOMESTIC_BOND_ETF_INFO_DB_ID
+from config.notion import NOTION_DOMESTIC_STOCK_INFO_DB_ID, NOTION_KRX_GOLD_INFO_DB_ID, NOTION_DOMESTIC_BOND_ETF_INFO_DB_ID
 from notion.get_all_pages import get_all_pages
 from pathlib import Path
 import pandas as pd
 
 from utils.is_trade_day import is_trading_day
 
-from domestic_stock_info.read import get_ticker
-from domestic_stock_info.data import get_domestic_stock_info
-from domestic_stock_info.csv.update import append_domestic_stock_history
+from assets.domestic_stock.info.reader import get_ticker
+from assets.domestic_stock.info.colletor import get_domestic_stock_info
+from data.csv.domestic_stock.updater import append_domestic_stock_history
 
-from krx_gold_info.data import get_krx_gold_info
-from krx_gold_info.csv.update import append_krx_gold_history
+from assets.krx_gold.info.colletor import get_krx_gold_info
+from data.csv.krx_gold.csv.updater import append_krx_gold_history
 
 def main():
     #-----------------------------------------
