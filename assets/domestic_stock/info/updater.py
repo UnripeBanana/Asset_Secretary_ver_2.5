@@ -40,7 +40,7 @@ def update_domestic_stock_info_DB(page, domestic_stock_info):
     # 3개월, 12개월 최고가 최저가 계산
     # update_nMonth_max_min_value(current_max, current_min, ticker, month)
 
-    path = "domestic_stock_info/csv/price_history.csv"
+    path = "data/csv/domestic_stock/price_history.csv"
     
     high_low_3m = update_nMonth_high_low_value(page, domestic_stock_info["hv"], domestic_stock_info["lv"], domestic_stock_info["cd"], path, 3)
     high_low_12m = update_nMonth_high_low_value(page, domestic_stock_info["hv"], domestic_stock_info["lv"], domestic_stock_info["cd"], path, 12)
