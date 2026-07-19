@@ -9,10 +9,10 @@ from matplotlib.patches import Rectangle
 # -----------------------------
 # 국내주식 차트 생성
 # -----------------------------
-from domestic_stock_info.read import get_ticker
+from assets.domestic_stock.info.reader import get_ticker
 from charts.read_csv import read_csv
 from charts.candle_chart import make_candle_chart
-from charts.meanline import meanline
+from charts.moving_average import moving_average
 from charts.axis import set_axis
 from charts.high_low import present_high_and_low
 from charts.current_price import present_current_price
@@ -43,7 +43,7 @@ for page in get_all_pages(NOTION_DOMESTIC_STOCK_INFO_DB_ID):
     make_candle_chart(ax, stock)
 
     # 이동평균선
-    meanline(ax, stock, x)
+    moving_average(ax, stock, x)
 
     # 축 설정
     set_axis(ax, stock)
