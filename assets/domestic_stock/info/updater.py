@@ -1,7 +1,7 @@
 from notion.client import notion # notion : 로그인 된 앱에 접근할 수 있도록 해주는 역할
 from notion.rich_text import rich_text
 from utils.day_log import today_and_time_is
-from domestic_stock_info.csv.get_high_low_nMonth import get_high_low_nMonth
+from data.csv.domestic_stock.get_high_low_nMonth import get_high_low_nMonth
 
 def update_nMonth_high_low_value(page, current_high, current_low, ticker, path, month):
     # get_high_low_nMonth(ticker, month)
