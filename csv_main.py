@@ -70,9 +70,6 @@ def main():
     # 국내 채권 ETF CSV 업데이트
     #-----------------------------------------
     # 국내 채권 ETF는 데이터를 받아오는 구조가 국내 주식과 동일함. 따라서 같은 함수를 적용.
-    
-    DOMESTIC_BOND_ETF_CSV_PATH = Path("data/csv/domestic_bond_etf/price_history.csv")
-    
     domestic_bond_etf_df = pd.read_csv(
         DOMESTIC_BOND_ETF_CSV_PATH,
         dtype={"ticker": str}
