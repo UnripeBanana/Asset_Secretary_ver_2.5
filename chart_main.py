@@ -1,4 +1,4 @@
-from config import NOTION_DOMESTIC_STOCK_INFO_DB_ID
+from config.notion import NOTION_DOMESTIC_STOCK_INFO_DB_ID
 from notion.get_all_pages import get_all_pages
 from pathlib import Path
 import pandas as pd
