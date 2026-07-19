@@ -57,5 +57,9 @@ jobs:
             TODAY=$(date +'%Y-%m-%d')
       
             git commit -m "Daily market history (${TODAY})"
-            git push
+            # 최신 main 반영
+            git pull --rebase origin main
+
+            # push
+            git push origin main
           fi
