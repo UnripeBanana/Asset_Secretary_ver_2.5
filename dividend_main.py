@@ -1,4 +1,4 @@
-from config import NOTION_DOMESTIC_STOCK_DIVIDEND_DB_ID
+from config.notion import NOTION_DOMESTIC_STOCK_DIVIDEND_DB_ID
 from notion.get_all_pages import get_all_pages
 
 #-----------------------------------------
