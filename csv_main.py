@@ -10,7 +10,7 @@ from assets.domestic_stock.info.collector import get_domestic_stock_info
 from data.csv.domestic_stock.updater import append_domestic_stock_history
 
 from assets.krx_gold.info.collector import get_krx_gold_info
-from data.csv.krx_gold.csv.updater import append_krx_gold_history
+from data.csv.krx_gold.updater import append_krx_gold_history
 
 def main():
     #-----------------------------------------
