@@ -1,4 +1,5 @@
 from config.notion import NOTION_DOMESTIC_STOCK_INFO_DB_ID, NOTION_KRX_GOLD_INFO_DB_ID, NOTION_DOMESTIC_BOND_ETF_INFO_DB_ID
+from config.csv import DOMESTIC_STOCK_CSV_PATH, KRX_GOLD_CSV_PATH, DOMESTIC_BOND_ETF_CSV_PATH
 from notion.get_all_pages import get_all_pages
 import pandas as pd
 
