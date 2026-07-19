@@ -4,9 +4,9 @@ from notion.get_all_pages import get_all_pages
 #-----------------------------------------
 # 국내주식 종목 DB 업데이트
 #-----------------------------------------
-from domestic_stock_info.read import get_ticker
-from domestic_stock_info.data import get_domestic_stock_info
-from domestic_stock_info.update import update_domestic_stock_info_DB
+from assets.domestic_stock.info.reader import get_ticker
+from assets.domestic_stock.info.collector import get_domestic_stock_info
+from assets.domestic_stock.info.updater import update_domestic_stock_info_DB
 
 for page in get_all_pages(NOTION_DOMESTIC_STOCK_INFO_DB_ID):
     # 티커 데이터 추출
@@ -24,8 +24,8 @@ for page in get_all_pages(NOTION_DOMESTIC_STOCK_INFO_DB_ID):
 #-----------------------------------------
 # KRX 금현물 종목 DB 업데이트
 #-----------------------------------------
-from krx_gold_info.data import get_krx_gold_info
-from krx_gold_info.update import update_krx_gold_info_DB
+from assets.krx_gold.info.collector import get_krx_gold_info
+from assets.krx_gold.info.updater import update_krx_gold_info_DB
 
 for page in get_all_pages(NOTION_KRX_GOLD_INFO_DB_ID):
     # 네이버증권에서 데이터 받아오기
