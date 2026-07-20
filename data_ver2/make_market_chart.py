@@ -76,7 +76,7 @@ def make_market_chart(df):
 
     # 저장
     plt.tight_layout()
-    name = df["name"]
+    name = df.iloc[0]["name"]
     
     title = f"data/image/{name}.png"
     
