@@ -46,6 +46,8 @@ def domestic_stock_data_reader():
     # DataFrame 생성
     df = pd.DataFrame(data[1:], columns=data[0])
 
+    df["날짜"] = pd.to_datetime(df["날짜"], format="%Y%m%d")
+    
     df = df.rename(columns={
         "날짜": "date",
         "시가": "open",
