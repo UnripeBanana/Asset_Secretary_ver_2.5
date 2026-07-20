@@ -49,11 +49,6 @@ jobs:
           if ! git diff --cached --quiet; then
             git commit -m "Update charts"
       
-            echo "================ git status ================"
-            git status
-            echo "==========================================="
-      
             git pull --rebase origin main
-      
             git push origin main
           fi
