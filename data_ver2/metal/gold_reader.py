@@ -8,7 +8,7 @@ def gold_reader():
 
     krx_gold_data = pd.DataFrame()
     
-    while i < 5:
+    while i < 50:
         url = (
             "https://m.stock.naver.com/front-api/marketIndex/prices"
             "?category=metals"
