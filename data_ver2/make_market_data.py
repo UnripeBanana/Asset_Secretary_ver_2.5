@@ -1,3 +1,5 @@
+
+
 def make_market_df(data, ticker, name):
 
     df = pd.DataFrame(data["result"])
