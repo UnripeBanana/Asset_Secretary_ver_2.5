@@ -34,9 +34,11 @@ for page in get_all_pages(NOTION_DOMESTIC_STOCK_INFO_DB_ID):
     if ticker != "005930":
         continue
 
-    # CSV 파일 읽어오기
-    #stock = read_csv(DOMESTIC_STOCK_CSV_PATH, ticker)
-    stock = domestic_stock_data_reader()
+    # 가격 데이터 네이버 증권에서 읽어오기
+    start = 20260420
+    end = 20260720
+    ticker = "005930"
+    stock = domestic_stock_data_reader(start, end, ticker)
 
     # chart 사이즈 설정
     fig, ax = plt.subplots(figsize=(15, 8))
