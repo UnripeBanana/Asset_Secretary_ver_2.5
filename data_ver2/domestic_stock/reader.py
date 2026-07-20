@@ -41,7 +41,18 @@ def domestic_stock_data_reader():
     
     # 앞뒤 공백 제거
     text = text.strip()
-    print(repr(text))
+    #print(repr(text))
+
+    # 문자열 → 리스트
+    data = ast.literal_eval(text)
+
+    # DataFrame 생성
+    df = pd.DataFrame(data[1:], columns=data[0])
+
+    # CSV 저장
+    #df.to_csv("005930.csv", index=False, encoding="utf-8-sig")
+
+    print(df)
 
 
 
