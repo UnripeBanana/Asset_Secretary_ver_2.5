@@ -1,1 +1,19 @@
+네이버 증권 (지표 찾아올 수 있는 주소)
+https://m.stock.naver.com/marketindex/home/major/exchange/bond
 
+-> F12 -> Network -> Fetch/XHR -> prices?category=exchange&reutersCode=.DXY&page=1 뭐 이런게 있음. -> Headers에서 링크 받아오면 됨.
+
+금 차트 읽어오기 (page 조정 시 과거 데이터 볼 수 있음)
+https://m.stock.naver.com/front-api/marketIndex/prices?category=metals&reutersCode=M04020000&page=1
+
+달러/원 환율 읽어오기 (page 조정 시 과거 데이터 볼 수 있음)
+https://m.stock.naver.com/front-api/marketIndex/prices?category=exchange&reutersCode=FX_USDKRW&page=1
+
+한국채권 읽어오기 (page 조정 시 과거 데이터 볼 수 있음)
+https://m.stock.naver.com/front-api/marketIndex/prices?category=bond&reutersCode=KR10YT%3DRR&page=1
+
+
+
+국내주식 읽어오기
+https://m.stock.naver.com/front-api/external/chart/domestic/info?symbol=005930&requestType=1&startTime=20240211&endTime=20251027&timeframe=day
+-> startTime, endTime 수정하면 데이터 전체적으로 확인하기 쌉가능
