@@ -5,6 +5,7 @@
 import requests
 import pandas as pd
 from io import StringIO
+import ast
 
 def domestic_stock_data_reader():
     start = 20240211
