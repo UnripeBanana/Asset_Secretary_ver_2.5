@@ -1,5 +1,6 @@
 import requests
 import pandas as pd
+from data_ver2.make_market_data import make_market_df
 
 def gold_reader():
     url = (
@@ -19,6 +20,8 @@ def gold_reader():
     data = response.json()
 
     krx_gold_data = make_market_df(data, "M04020000", "KRX Gold")
+
+    print(krx_gold_data)
 
 
     
