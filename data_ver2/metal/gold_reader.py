@@ -3,23 +3,37 @@ import pandas as pd
 from data_ver2.make_market_data import make_market_df
 
 def gold_reader():
-    url = (
-        "https://m.stock.naver.com/front-api/marketIndex/prices"
-        "?category=metals"
-        "&reutersCode=M04020000"
-        "&page=1"
-    )
-    
-    headers = {
-        "User-Agent": "Mozilla/5.0",
-        "Referer": "https://m.stock.naver.com/"
-    }
-    
-    response = requests.get(url, headers=headers)
-    
-    data = response.json()
+    i = 1
+    ticker = "M04020000"
 
-    krx_gold_data = make_market_df(data, "M04020000", "KRX Gold")
+    krx_gold_data = pd.DataFrame()
+    
+    while i < 5:
+        url = (
+            "https://m.stock.naver.com/front-api/marketIndex/prices"
+            "?category=metals"
+            f"&reutersCode={ticker}"
+            f"&page={i}"
+        )
+        
+        headers = {
+            "User-Agent": "Mozilla/5.0",
+            "Referer": "https://m.stock.naver.com/"
+        }
+        
+        response = requests.get(url, headers=headers)
+        
+        data = response.json()
+
+        page_df = make_market_df(data, "M04020000", "KRX Gold")
+
+        # 기존 데이터 + 이번 페이지 데이터 합치기
+        krx_gold_data = pd.concat(
+            [krx_gold_data, page_df],
+            ignore_index=True
+        )
+        i += 1
+    
 
     return krx_gold_data
 
