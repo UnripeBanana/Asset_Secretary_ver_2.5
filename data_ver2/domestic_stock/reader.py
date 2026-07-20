@@ -8,9 +8,10 @@ import ast
 import re
 
 def domestic_stock_data_reader(start, end, ticker):
-    start = 20260420
-    end = 20260720
-    ticker = "005930"
+    # 입력 형식 표시하려고 남겨둔 내용. 지우지 말 것
+    #start = 20260420
+    #end = 20260720
+    #ticker = "005930"
     
     url = (
         f"https://m.stock.naver.com/front-api/external/chart/domestic/info"
