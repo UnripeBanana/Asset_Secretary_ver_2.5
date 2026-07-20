@@ -4,11 +4,13 @@ def make_market_df(data, ticker, name):
 
     df = pd.DataFrame(data["result"])
 
-    df = df[["localTradedAt", "closePrice"]]
+    df = df[["localTradedAt", "closePrice", "fluctuations", "fluctuationsRatio"]]
 
     df = df.rename(columns={
         "localTradedAt": "date",
-        "closePrice": "close"
+        "closePrice": "close",
+        "fluctuations": "change",
+        "fluctuationsRatio": "rate"
     })
 
     df["date"] = pd.to_datetime(df["date"]).dt.strftime("%Y-%m-%d")
@@ -19,11 +21,22 @@ def make_market_df(data, ticker, name):
         .astype(int)
     )
 
+    df["change"] = (
+        df["change"]
+        .str.replace(",", "", regex=False)
+        .astype(int)
+    )
+
+    df["rate"] = (
+        df["rate"]
+        .str.astype(int)
+    )
+
     df["ticker"] = ticker
     df["name"] = name
 
     df = df[
-        ["date", "ticker", "name", "close"]
+        ["date", "ticker", "name", "close", "change", "rate"]
     ]
 
     return (
