@@ -29,7 +29,7 @@ def make_market_df(data, ticker, name):
 
     df["rate"] = (
         df["rate"]
-        .astype(int)
+        .astype(float)
     )
 
     df["ticker"] = ticker
