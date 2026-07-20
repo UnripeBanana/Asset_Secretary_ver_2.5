@@ -33,7 +33,8 @@ def gold_reader():
             ignore_index=True
         )
         i += 1
-    
+
+    print(krx_gold_data)
 
     return krx_gold_data
 
