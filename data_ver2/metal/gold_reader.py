@@ -41,6 +41,8 @@ def gold_reader():
         .reset_index(drop=True)
     )
 
+    print(krx_gold_data)
+
     return krx_gold_data
 
 
