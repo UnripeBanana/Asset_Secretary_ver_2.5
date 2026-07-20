@@ -29,9 +29,9 @@ def domestic_stock_data_reader():
         url, 
         headers=headers,
         timeout=10
-    ).json()
+    )
 
-    print(response)
+    print(response.headers["Content-Type"])
 
     """
     df = pd.read_csv(StringIO(response.text))
