@@ -18,13 +18,13 @@ def make_market_df(data, ticker, name):
     df["close"] = (
         df["close"]
         .str.replace(",", "", regex=False)
-        .astype(int)
+        .astype(float)
     )
 
     df["change"] = (
         df["change"]
         .str.replace(",", "", regex=False)
-        .astype(int)
+        .astype(float)
     )
 
     df["rate"] = (
