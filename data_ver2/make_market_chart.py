@@ -12,13 +12,13 @@ def make_market_chart(df):
     # 그래프 생성
     # ---------------------------------
     fig, ax = plt.subplots(figsize=(12, 6))
+
+    x = range(len(df))
     
     ax.plot(
-        df["date"],
+        x,
         df["close"],
-        marker="o",
-        linewidth=2,
-        markersize=5,
+        linewidth=2
     )
     
     # ---------------------------------
@@ -36,12 +36,12 @@ def make_market_chart(df):
     # x축 날짜 표시
     # 월요일만 표시
     # ---------------------------------
-    ax.xaxis.set_major_locator(
-        mdates.WeekdayLocator(byweekday=mdates.MO)
-    )
+    # x축 눈금 위치 (5거래일마다 하나씩)
+    ax.set_xticks(range(0, len(df), 5))
     
-    ax.xaxis.set_major_formatter(
-        mdates.DateFormatter("%m-%d")
+    # x축에 표시할 날짜
+    ax.set_xticklabels(
+        df["date"].dt.strftime("%m-%d")[::5]
     )
     
     # ---------------------------------
@@ -52,13 +52,11 @@ def make_market_chart(df):
     # ---------------------------------
     # 현재 가격 표시
     # ---------------------------------
-    last_date = df.iloc[-1]["date"]
+    last_x = len(df) - 1
     last_price = df.iloc[-1]["close"]
     
-    ax.scatter(last_date, last_price, s=80)
-    
     ax.text(
-        last_date,
+        last_x,
         last_price,
         f"{last_price:,}",
         fontsize=10,
