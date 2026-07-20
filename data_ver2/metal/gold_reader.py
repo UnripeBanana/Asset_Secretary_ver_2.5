@@ -34,7 +34,12 @@ def gold_reader():
         )
         i += 1
 
-    print(krx_gold_data)
+    
+    krx_gold_data = (
+        krx_gold_data
+        .sort_values("date")
+        .reset_index(drop=True)
+    )
 
     return krx_gold_data
 
