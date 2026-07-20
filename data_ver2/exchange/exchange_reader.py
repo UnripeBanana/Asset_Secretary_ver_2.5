@@ -2,7 +2,7 @@ import requests
 import pandas as pd
 from data_ver2.make_market_data import make_market_df
 
-def gold_reader():
+def exchange_reader():
     i = 1
     ticker = "FX_USDKRW"
 
