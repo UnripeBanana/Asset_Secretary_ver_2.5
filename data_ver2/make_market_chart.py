@@ -76,7 +76,7 @@ def make_market_chart(df):
 
     # 저장
     plt.tight_layout()
-    name = "시험용 금 이미지"
+    name = df["name"]
     
     title = f"data/image/{name}.png"
     
