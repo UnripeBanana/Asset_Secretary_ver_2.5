@@ -31,7 +31,14 @@ def domestic_stock_data_reader():
         timeout=10
     )
 
-    print(response.headers["Content-Type"])
+    #print(response.headers["Content-Type"])
+
+    try:
+        data = response.json()
+        print(type(data))
+        print(data[:2])
+    except Exception as e:
+        print(e)
 
     """
     df = pd.read_csv(StringIO(response.text))
