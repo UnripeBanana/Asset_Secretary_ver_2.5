@@ -75,3 +75,15 @@ def make_market_chart(df):
     # 화면 출력
     # ---------------------------------
     plt.show()
+
+    # 저장
+    plt.tight_layout()
+    name = "시험용 금 이미지"
+    
+    title = f"data/image/{name}.png"
+    
+    plt.savefig(
+        title,
+        dpi=300,
+        bbox_inches="tight"
+    )
