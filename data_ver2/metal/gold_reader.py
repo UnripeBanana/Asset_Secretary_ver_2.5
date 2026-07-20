@@ -21,7 +21,7 @@ def gold_reader():
 
     krx_gold_data = make_market_df(data, "M04020000", "KRX Gold")
 
-    print(krx_gold_data)
+    return krx_gold_data
 
 
     
