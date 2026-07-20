@@ -7,7 +7,7 @@ import pandas as pd
 import ast
 import re
 
-def domestic_stock_data_reader():
+def domestic_stock_data_reader(start, end, ticker):
     start = 20260420
     end = 20260720
     ticker = "005930"
