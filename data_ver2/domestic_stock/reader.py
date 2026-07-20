@@ -14,11 +14,11 @@ def domestic_stock_data_reader():
     end = f"&endTime={end_day}"
     
     url = (
-        "https://m.stock.naver.com/front-api/external/chart/domestic/info"
-        "?symbol=005930"
-        "&requestType=1"
-        start
-        end
+        "https://m.stock.naver.com/front-api/external/chart/domestic/info",
+        "?symbol=005930",
+        "&requestType=1",
+        start,
+        end,
         "&timeframe=day"
     )
     
