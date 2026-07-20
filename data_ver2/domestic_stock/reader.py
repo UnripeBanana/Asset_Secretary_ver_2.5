@@ -36,7 +36,7 @@ def domestic_stock_data_reader():
 
     print(response.text[:200])
     #print(df.head())
-    """
+    
 
 
     data = ast.literal_eval(response.text)
@@ -47,6 +47,8 @@ def domestic_stock_data_reader():
     )
 
     print(df.head())
+    """
+    print(repr(response.text[:500]))
 
 
 """
