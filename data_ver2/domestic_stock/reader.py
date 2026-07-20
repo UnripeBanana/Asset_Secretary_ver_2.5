@@ -29,7 +29,9 @@ def domestic_stock_data_reader():
         url, 
         headers=headers,
         timeout=10
-    )
+    ).json()
+
+    print(response)
 
     """
     df = pd.read_csv(StringIO(response.text))
@@ -48,7 +50,6 @@ def domestic_stock_data_reader():
 
     print(df.head())
     """
-    print(repr(response.text[:500]))
 
 
 """
