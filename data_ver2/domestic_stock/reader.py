@@ -9,10 +9,11 @@ from io import StringIO
 def domestic_stock_data_reader():
     start = 20240211
     end = 20260720
+    ticker = "005930"
     
     url = (
         f"https://m.stock.naver.com/front-api/external/chart/domestic/info"
-        f"?symbol=005930"
+        f"?symbol={ticker}"
         f"&requestType=1"
         f"&startTime={start}"
         f"&endTime={end}"
@@ -28,11 +29,23 @@ def domestic_stock_data_reader():
         headers=headers,
         timeout=10
     )
-    
+
+    """
     df = pd.read_csv(StringIO(response.text))
 
     print(response.text[:200])
     #print(df.head())
+    """
+
+
+    data = ast.literal_eval(response.text)
+    
+    df = pd.DataFrame(
+        data[1:],      # 데이터
+        columns=data[0]  # 헤더
+    )
+
+    print(df.head())
 
 
 """
