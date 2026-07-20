@@ -47,7 +47,7 @@ def to_int(value):
     return int(value.replace(",", ""))
 
 def get_gold_prop():
-
+    # 직접 접속 : https://m.stock.naver.com/marketindex/metals/M04020000
     url = "https://m.stock.naver.com/front-api/realTime/marketIndex/metals"
     
     headers = {
