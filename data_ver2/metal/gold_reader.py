@@ -16,3 +16,5 @@ def gold_reader():
     response = requests.get(url, headers=headers)
     
     data = response.json()
+
+    print(data)
