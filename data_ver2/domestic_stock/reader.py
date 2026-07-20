@@ -30,8 +30,9 @@ def domestic_stock_data_reader():
     )
     
     df = pd.read_csv(StringIO(response.text))
-    
-    print(df.head())
+
+    print(response.text[:200])
+    #print(df.head())
 
 
 """
