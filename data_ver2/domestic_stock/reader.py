@@ -31,14 +31,18 @@ def domestic_stock_data_reader():
         headers=headers,
         timeout=10
     )
+    
+    print(repr(response.text))
+    
+    text = response.text
 
     # 줄바꿈, 탭 제거
-    response = re.sub(r'[\n\r\t]', '', response)
+    text = re.sub(r'[\n\r\t]', '', text)
     
     # 앞뒤 공백 제거
-    response = response.strip()
+    text = text.strip()
+    print(repr(text))
 
-    print(repr(response.text))
 
 
     """
