@@ -20,6 +20,8 @@ from charts.current_price import present_current_price
 from notion.client import notion
 from notion.initialize_info_page import initialize_stock_page
 
+from data_ver2.domestic_stock.reader import domestic_stock_data_reader
+
 # 나중에는
 # make_chart 함수 하나, delete_chart 하나 update_chart 하나 이렇게 구성하는 것도 괜찮을 듯. 깔끔하게
 
@@ -33,7 +35,8 @@ for page in get_all_pages(NOTION_DOMESTIC_STOCK_INFO_DB_ID):
         continue
 
     # CSV 파일 읽어오기
-    stock = read_csv(DOMESTIC_STOCK_CSV_PATH, ticker)
+    #stock = read_csv(DOMESTIC_STOCK_CSV_PATH, ticker)
+    stock = domestic_stock_data_reader()
 
     # chart 사이즈 설정
     fig, ax = plt.subplots(figsize=(15, 8))
