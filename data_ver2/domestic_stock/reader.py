@@ -31,14 +31,14 @@ def domestic_stock_data_reader():
         timeout=10
     )
 
-    #print(response.headers["Content-Type"])
+    # 줄바꿈, 탭 제거
+    response = re.sub(r'[\n\r\t]', '', response)
+    
+    # 앞뒤 공백 제거
+    response = response.strip()
 
-    try:
-        data = response.json()
-        print(type(data))
-        print(data[:2])
-    except Exception as e:
-        print(e)
+    print(repr(response.text))
+
 
     """
     df = pd.read_csv(StringIO(response.text))
