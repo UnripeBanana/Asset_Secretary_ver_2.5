@@ -46,5 +46,14 @@ def domestic_stock_data_reader():
     # DataFrame 생성
     df = pd.DataFrame(data[1:], columns=data[0])
 
+    df = df.rename(columns={
+        "날짜": "date",
+        "시가": "open",
+        "고가": "high",
+        "저가": "low",
+        "종가": "close",
+        "거래량": "volume"
+    })
+
     return df
 
