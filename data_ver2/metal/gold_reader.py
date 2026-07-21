@@ -47,8 +47,8 @@ def make_market_df(data, ticker, name):
     )
 
 def gold_reader(start, end, ticker, name):
-    #start = pd.to_datetime(start, format="%Y%m%d")
-    #end = pd.to_datetime(end, format="%Y%m%d")
+    start = pd.to_datetime(str(start), format="%Y%m%d")
+    end = pd.to_datetime(str(end), format="%Y%m%d")
     #ticker = "M04020000"
     #name = "KRX Gold"
 
@@ -77,7 +77,7 @@ def gold_reader(start, end, ticker, name):
 
         page_df = make_market_df(data, ticker, name)
 
-        page_df["date"] = pd.to_datetime(page_df["date"]).dt.strftime("%Y-%m-%d")
+        page_df["date"] = pd.to_datetime(page_df["date"])
 
         dfs.append(page_df)
         
@@ -100,7 +100,9 @@ def gold_reader(start, end, ticker, name):
         .sort_values("date")
         .reset_index(drop=True)
     )
-
+    
+    krx_gold_data["date"] = krx_gold_data["date"].dt.strftime("%Y-%m-%d")
+    
     print(krx_gold_data)
 
     return krx_gold_data
