@@ -1,8 +1,8 @@
+
+
 def market_index_reader(start, end, category, ticker, name):
     start = pd.to_datetime(str(start), format="%Y%m%d")
     end = pd.to_datetime(str(end), format="%Y%m%d")
-    #ticker = "M04020000"
-    #name = "KRX Gold"
 
     page = 1
     dfs = []
@@ -10,7 +10,7 @@ def market_index_reader(start, end, category, ticker, name):
     while True:
         url = (
             "https://m.stock.naver.com/front-api/marketIndex/prices"
-            "?category=metals"
+            f"?category={category}"
             f"&reutersCode={ticker}"
             f"&page={page}"
         )
@@ -40,21 +40,19 @@ def market_index_reader(start, end, category, ticker, name):
     
         page += 1        
 
-    krx_gold_data = pd.concat(dfs, ignore_index=True)
+    market_index_data = pd.concat(dfs, ignore_index=True)
 
-    krx_gold_data = krx_gold_data[
-        (krx_gold_data["date"] >= start) &
-        (krx_gold_data["date"] <= end)
+    market_index_data = market_index_data[
+        (market_index_data["date"] >= start) &
+        (market_index_data["date"] <= end)
     ]
     
-    krx_gold_data = (
-        krx_gold_data
+    market_index_data = (
+        market_index_data
         .sort_values("date")
         .reset_index(drop=True)
     )
     
-    krx_gold_data["date"] = krx_gold_data["date"].dt.strftime("%Y-%m-%d")
-    
-    print(krx_gold_data)
+    market_index_data["date"] = market_index_data["date"].dt.strftime("%Y-%m-%d")
 
-    return krx_gold_data
+    return market_index_data
