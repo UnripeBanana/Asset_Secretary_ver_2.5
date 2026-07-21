@@ -36,7 +36,10 @@ def market_index_reader(start, end, category, ticker, name):
         dfs.append(page_df)
         
         oldest = page_df["date"].min()
-    
+
+        print(start, start.tzinfo)
+        print(oldest, oldest.tzinfo)
+        
         if oldest <= start:
             break
     
