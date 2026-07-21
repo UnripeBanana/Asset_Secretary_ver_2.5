@@ -25,26 +25,17 @@ from data_ver2.domestic_stock.reader import domestic_stock_data_reader
 # 나중에는
 # make_chart 함수 하나, delete_chart 하나 update_chart 하나 이렇게 구성하는 것도 괜찮을 듯. 깔끔하게
 
-def clear_page(page_id):
-    while True:
-        blocks = notion.blocks.children.list(block_id=page_id)
-
-        if not blocks["results"]:
-            break
-
-        for block in blocks["results"]:
-            notion.blocks.delete(block["id"])
-
 for page in get_all_pages(NOTION_DOMESTIC_STOCK_INFO_DB_ID):
     # 티커 데이터 추출
     ticker = get_ticker(page)
     if not ticker:
         continue
 
-    #if ticker != "005930":
-        #continue
+    if ticker != "005930":
+        continue
 
-    clear_page(page["id"])
+    blocks = notion.blocks.children.list(block_id=page["id"])
+    print(blocks)
 """
     # 가격 데이터 네이버 증권에서 읽어오기
     start = 20250720
