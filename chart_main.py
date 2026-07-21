@@ -35,6 +35,11 @@ for page in get_all_pages(NOTION_DOMESTIC_STOCK_INFO_DB_ID):
         continue
 
     blocks = notion.blocks.children.list(block_id=page["id"])
+        
+    for block in blocks["results"]:
+        notion.blocks.delete(block["id"])
+            
+    blocks = notion.blocks.children.list(block_id=page["id"])
     print(blocks)
 """
     # 가격 데이터 네이버 증권에서 읽어오기
