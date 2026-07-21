@@ -19,13 +19,13 @@ def make_market_index_chart(df):
     # ---------------------------------
     # 제목
     # ---------------------------------
-    ax.set_title("KRX Gold Price", fontsize=18)
+    ax.set_title(df.iloc[0]["name"], fontsize=18)
     
     # ---------------------------------
     # 축 이름
     # ---------------------------------
     ax.set_xlabel("Date")
-    ax.set_ylabel("Price (KRW)")
+    ax.set_ylabel(f"Price ({df.iloc[0]["currency"]})")
     
     # ---------------------------------
     # x축 날짜 표시
