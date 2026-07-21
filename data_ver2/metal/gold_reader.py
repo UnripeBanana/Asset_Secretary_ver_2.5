@@ -47,10 +47,10 @@ def make_market_df(data, ticker, name):
     )
 
 def gold_reader(start, end, ticker, name):
-    start = pd.to_datetime(start, format="%Y%m%d")
-    end = pd.to_datetime(end, format="%Y%m%d")
-    ticker = "M04020000"
-    name = "KRX Gold"
+    #start = pd.to_datetime(start, format="%Y%m%d")
+    #end = pd.to_datetime(end, format="%Y%m%d")
+    #ticker = "M04020000"
+    #name = "KRX Gold"
 
     page = 1
     dfs = []
