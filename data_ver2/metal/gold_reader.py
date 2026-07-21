@@ -46,18 +46,23 @@ def make_market_df(data, ticker, name):
         .reset_index(drop=True)
     )
 
-def gold_reader(start, end, ticker):
-    i = 1
+def gold_reader(start, end, ticker, name):
+    start = pd.to_datetime(start, format="%Y%m%d")
+    end = pd.to_datetime(end, format="%Y%m%d")
     ticker = "M04020000"
+    name = "KRX Gold"
 
     krx_gold_data = pd.DataFrame()
+
+    page = 1
+    dfs = []
     
-    while i < 50:
+    while True:
         url = (
             "https://m.stock.naver.com/front-api/marketIndex/prices"
             "?category=metals"
             f"&reutersCode={ticker}"
-            f"&page={i}"
+            f"&page={page}"
         )
         
         headers = {
@@ -69,15 +74,31 @@ def gold_reader(start, end, ticker):
         
         data = response.json()
 
-        page_df = make_market_df(data, "M04020000", "KRX Gold")
+        page_df = make_market_df(data, ticker, name)
 
         # 기존 데이터 + 이번 페이지 데이터 합치기
         krx_gold_data = pd.concat(
             [krx_gold_data, page_df],
             ignore_index=True
         )
-        i += 1
 
+        page_df["date"] = pd.to_datetime(page_df["date"], format="%Y%m%d")
+
+        dfs.append(page_df)
+        
+        oldest = pd.to_datetime(page_df["date"]).min()
+    
+        if oldest <= start:
+            break
+    
+        page += 1        
+
+    krx_gold_data = pd.concat(dfs, ignore_index=True)
+
+    krx_gold_data = krx_gold_data[
+        (krx_gold_data["date"] >= start) &
+        (krx_gold_data["date"] <= end)
+    ]
     
     krx_gold_data = (
         krx_gold_data
@@ -89,7 +110,6 @@ def gold_reader(start, end, ticker):
 
     return krx_gold_data
 
-import pandas as pd
 
 
     
