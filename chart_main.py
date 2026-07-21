@@ -63,7 +63,7 @@ for page in get_all_pages(NOTION_DOMESTIC_STOCK_INFO_DB_ID):
     plt.tight_layout()
     name = page["properties"]["종목"]["title"][0]["plain_text"]
     
-    title = f"data/image/{name}_{ticker}.png"
+    title = f"data_ver2/image/{name}_{ticker}.png"
     
     plt.savefig(
         title,
