@@ -49,6 +49,8 @@ def market_index_reader(start, end, category, ticker, name, currency):
 
     market_index_data = pd.concat(dfs, ignore_index=True)
 
+    market_index_data["currency"] = currency
+
     market_index_data = market_index_data[
         (market_index_data["date"] >= start) &
         (market_index_data["date"] <= end)
