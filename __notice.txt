@@ -9,7 +9,7 @@ https://m.stock.naver.com/front-api/marketIndex/prices?category=metals&reutersCo
 
 달러/원 환율 읽어오기 (page 조정 시 과거 데이터 볼 수 있음)
 https://m.stock.naver.com/front-api/marketIndex/prices?category=exchange&reutersCode=FX_USDKRW&page=1
-"exchange", "FX_USDKRW", "Dollar/Won Exchange"
+"exchange", "FX_USDKRW", "Dollar Won Exchange"
 
 국제 금
 https://m.stock.naver.com/front-api/marketIndex/prices?category=metals&reutersCode=GCcv1&page=1
