@@ -80,7 +80,7 @@ for page in get_all_pages(NOTION_DOMESTIC_STOCK_INFO_DB_ID):
     # 노션 업로드
     chart_url = (
         "https://raw.githubusercontent.com/"
-        "UnripeBanana/Asset_Secretary_ver_2.0/main/"
+        "UnripeBanana/Asset_Secretary_ver_2.5/main/"
         f"data_ver2/image/{name}_{ticker}.png"
     )
 
