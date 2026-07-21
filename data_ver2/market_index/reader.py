@@ -31,7 +31,7 @@ def market_index_reader(start, end, category, ticker, name):
 
         page_df = make_market_index_df(data, ticker, name)
 
-        page_df["date"] = pd.to_datetime(page_df["date"])
+        page_df["date"] = pd.to_datetime(page_df["date"]).dt.tz_localize(None)
 
         dfs.append(page_df)
         
