@@ -1,4 +1,4 @@
-def gold_reader(start, end, category, ticker, name):
+def market_index_reader(start, end, category, ticker, name):
     start = pd.to_datetime(str(start), format="%Y%m%d")
     end = pd.to_datetime(str(end), format="%Y%m%d")
     #ticker = "M04020000"
