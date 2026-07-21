@@ -6,4 +6,4 @@ from data_ver2.exchange.exchange_reader import exchange_reader
 
 make_market_chart(gold_reader())
 
-make_market_chart(exchange_reader())
+#make_market_chart(exchange_reader())
