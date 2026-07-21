@@ -1,4 +1,5 @@
-
+import requests
+from data_ver2.market_index.naver_to_df import 
 
 def market_index_reader(start, end, category, ticker, name):
     start = pd.to_datetime(str(start), format="%Y%m%d")
