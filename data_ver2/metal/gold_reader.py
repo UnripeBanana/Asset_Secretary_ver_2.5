@@ -46,7 +46,7 @@ def make_market_df(data, ticker, name):
         .reset_index(drop=True)
     )
 
-def gold_reader():
+def gold_reader(start, end, ticker):
     i = 1
     ticker = "M04020000"
 
