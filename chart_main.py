@@ -40,7 +40,7 @@ for page in get_all_pages(NOTION_DOMESTIC_STOCK_INFO_DB_ID):
         notion.blocks.delete(block["id"])
             
     blocks = notion.blocks.children.list(block_id=page["id"])
-    print(blocks)
+    print(blocks, "clear")
 """
     # 가격 데이터 네이버 증권에서 읽어오기
     start = 20250720
