@@ -34,3 +34,15 @@ make_market_index_chart(market_index_reader(20250721, 20260721, "bond", "US3YT%3
 make_market_index_chart(market_index_reader(20250721, 20260721, "bond", "KR30YT%3DRR", "Korea Bond 30y", "KRW"))
 make_market_index_chart(market_index_reader(20250721, 20260721, "bond", "KR10YT%3DRR", "Korea Bond 10y", "KRW"))
 make_market_index_chart(market_index_reader(20250721, 20260721, "bond", "KR3YT%3DRR", "Korea Bond 3y", "KRW"))
+
+#------------------------------
+# Base Interest Rate
+#------------------------------
+
+make_market_index_chart(market_index_reader(20250721, 20260721, "bond", "US30YT%3DRR", "USA Bond 30y", "USD"))
+
+    미국기준금리
+https://m.stock.naver.com/front-api/marketIndex/standardInterest?category=standardInterest&reutersCode=USA&page=1
+
+한국기준금리
+https://m.stock.naver.com/front-api/marketIndex/standardInterest?category=standardInterest&reutersCode=KOR&page=1
