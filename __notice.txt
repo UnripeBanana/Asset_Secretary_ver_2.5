@@ -5,12 +5,15 @@ https://m.stock.naver.com/marketindex/home/major/exchange/bond
 
 금 차트 읽어오기 (page 조정 시 과거 데이터 볼 수 있음)
 https://m.stock.naver.com/front-api/marketIndex/prices?category=metals&reutersCode=M04020000&page=1
+"metals", "M04020000", "KRX Gold"
 
 달러/원 환율 읽어오기 (page 조정 시 과거 데이터 볼 수 있음)
 https://m.stock.naver.com/front-api/marketIndex/prices?category=exchange&reutersCode=FX_USDKRW&page=1
+"exchange", "FX_USDKRW", "FX Dollar/Won"
 
 한국채권 읽어오기 (page 조정 시 과거 데이터 볼 수 있음)
 https://m.stock.naver.com/front-api/marketIndex/prices?category=bond&reutersCode=KR10YT%3DRR&page=1
+"bond", "KR10YT%3DRR", "Domestic Bond"
 
 
 
