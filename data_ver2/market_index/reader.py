@@ -35,7 +35,7 @@ def market_index_reader(start, end, category, ticker, name):
 
         dfs.append(page_df)
         
-        oldest = pd.to_datetime(page_df["date"]).min()
+        oldest = page_df["date"].min()
     
         if oldest <= start:
             break
@@ -54,7 +54,5 @@ def market_index_reader(start, end, category, ticker, name):
         .sort_values("date")
         .reset_index(drop=True)
     )
-    
-    market_index_data["date"] = market_index_data["date"].dt.strftime("%Y-%m-%d")
 
     return market_index_data
