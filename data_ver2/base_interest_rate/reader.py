@@ -8,10 +8,10 @@ def market_index_reader(start, end, category, ticker, name, currency):
 
     page = 1
     dfs = []
-    
+
     while True:
         url = (
-            "https://m.stock.naver.com/front-api/marketIndex/prices"
+            "https://m.stock.naver.com/front-api/marketIndex/standardInterest"
             f"?category={category}"
             f"&reutersCode={ticker}"
             f"&page={page}"
