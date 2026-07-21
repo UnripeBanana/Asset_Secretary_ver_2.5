@@ -31,17 +31,9 @@ for page in get_all_pages(NOTION_DOMESTIC_STOCK_INFO_DB_ID):
     if not ticker:
         continue
 
-    #if ticker != "005930":
-        #continue
+    if ticker != "005930":
+        continue
 
-    blocks = notion.blocks.children.list(block_id=page["id"])
-        
-    for block in blocks["results"]:
-        notion.blocks.delete(block["id"])
-            
-    #blocks = notion.blocks.children.list(block_id=page["id"])
-    #print(blocks, "clear")
-"""
     # 가격 데이터 네이버 증권에서 읽어오기
     start = 20250720
     end = 20260720
@@ -79,36 +71,21 @@ for page in get_all_pages(NOTION_DOMESTIC_STOCK_INFO_DB_ID):
         bbox_inches="tight"
     )
 
-    # 노션 페이지 초기화 작업
-    initialize_stock_page(page["id"])
-
     # 노션에 있는 기존 이미지 삭제
-    found = False
-    heading_block_id = None
-
     blocks = notion.blocks.children.list(block_id=page["id"])
-        
-    for block in blocks["results"]:
-    
-        # "3개월 차트" 제목을 찾음
-        if (
-            block["type"] == "heading_2"
-            and block["heading_2"]["rich_text"][0]["plain_text"] == "3개월 차트"
-        ):
-            found = True
-            heading_block_id = block["id"]
-            continue
-    
-        # 제목 바로 다음 image 삭제
-        if found and block["type"] == "image":
-            notion.blocks.delete(block["id"])
-            break
+
+    if not len(blocks["results"]):
+        for block in blocks["results"]:
+            # "3개월 차트" 제목을 찾음
+            if block["type"] == "image":
+                notion.blocks.delete(block["id"])
+                break
     
     # 노션 업로드
     chart_url = (
         "https://raw.githubusercontent.com/"
         "UnripeBanana/Asset_Secretary_ver_2.0/main/"
-        f"data/image/{name}_{ticker}.png"
+        f"data_ver2/image/{name}_{ticker}.png"
     )
 
     notion.blocks.children.append(
@@ -127,4 +104,3 @@ for page in get_all_pages(NOTION_DOMESTIC_STOCK_INFO_DB_ID):
             }
         ]
     )
-"""
