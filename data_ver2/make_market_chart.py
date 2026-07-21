@@ -2,12 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 
-def make_market_chart(df):
-    # ---------------------------------
-    # 날짜를 datetime 형식으로 변환
-    # ---------------------------------
-    df["date"] = pd.to_datetime(df["date"])
-    
+def make_market_index_chart(df):
     # ---------------------------------
     # 그래프 생성
     # ---------------------------------
