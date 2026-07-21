@@ -73,13 +73,9 @@ for page in get_all_pages(NOTION_DOMESTIC_STOCK_INFO_DB_ID):
 
     # 노션에 있는 기존 이미지 삭제
     blocks = notion.blocks.children.list(block_id=page["id"])
-
-    if not len(blocks["results"]):
+    if len(blocks["results"]):
         for block in blocks["results"]:
-            # "3개월 차트" 제목을 찾음
-            if block["type"] == "image":
-                notion.blocks.delete(block["id"])
-                break
+            notion.blocks.delete(block["id"])
     
     # 노션 업로드
     chart_url = (
