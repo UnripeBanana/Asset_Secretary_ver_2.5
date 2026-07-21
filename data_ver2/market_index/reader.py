@@ -1,5 +1,5 @@
 import requests
-from data_ver2.market_index.naver_to_df import 
+from data_ver2.market_index.naver_to_df import make_market_index_df
 
 def market_index_reader(start, end, category, ticker, name):
     start = pd.to_datetime(str(start), format="%Y%m%d")
@@ -28,7 +28,7 @@ def market_index_reader(start, end, category, ticker, name):
         if not data.get("result"):
             break    
 
-        page_df = make_market_df(data, ticker, name)
+        page_df = make_market_index_df(data, ticker, name)
 
         page_df["date"] = pd.to_datetime(page_df["date"])
 
