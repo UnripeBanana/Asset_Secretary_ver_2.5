@@ -15,7 +15,7 @@ make_market_index_chart(market_index_reader(20250721, 20260721, "metals", "SIcv1
 #------------------------------
 # Exchange
 #------------------------------
-make_market_index_chart(market_index_reader(20250721, 20260721, "exchange", "FX_USDKRW", "Dollar/Won Exchange"))
+make_market_index_chart(market_index_reader(20250721, 20260721, "exchange", "FX_USDKRW", "Dollar Won Exchange"))
 make_market_index_chart(market_index_reader(20250721, 20260721, "exchange", ".DXY", "Dollar Index"))
 
 #------------------------------
