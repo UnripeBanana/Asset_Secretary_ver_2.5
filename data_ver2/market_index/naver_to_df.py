@@ -16,8 +16,8 @@ def make_market_index_df(data, ticker, name):
         "fluctuationsRatio": "rate"
     })
 
-    # 기존에 사용중인 형식으로 변경
-    df["date"] = pd.to_datetime(df["date"]).dt.strftime("%Y-%m-%d")
+    # 기존에 사용중인 형식으로 변경 (문제 있어보임. 생략)
+    #df["date"] = pd.to_datetime(df["date"]).dt.strftime("%Y-%m-%d")
 
     # str -> int
     df["close"] = (
