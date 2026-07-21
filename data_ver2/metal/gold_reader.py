@@ -52,8 +52,6 @@ def gold_reader(start, end, ticker, name):
     ticker = "M04020000"
     name = "KRX Gold"
 
-    krx_gold_data = pd.DataFrame()
-
     page = 1
     dfs = []
     
@@ -74,15 +72,12 @@ def gold_reader(start, end, ticker, name):
         
         data = response.json()
 
+        if not data.get("result"):
+            break    
+
         page_df = make_market_df(data, ticker, name)
 
-        # 기존 데이터 + 이번 페이지 데이터 합치기
-        krx_gold_data = pd.concat(
-            [krx_gold_data, page_df],
-            ignore_index=True
-        )
-
-        page_df["date"] = pd.to_datetime(page_df["date"], format="%Y%m%d")
+        page_df["date"] = pd.to_datetime(page_df["date"]).dt.strftime("%Y-%m-%d")
 
         dfs.append(page_df)
         
