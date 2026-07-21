@@ -90,7 +90,7 @@ for page in get_all_pages(NOTION_DOMESTIC_STOCK_INFO_DB_ID):
 
     notion.blocks.children.append(
         block_id=page["id"],
-        after=heading_block_id,
+        #after=heading_block_id,
         children=[
             {
                 "object": "block",
