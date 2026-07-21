@@ -1,6 +1,7 @@
 from data_ver2.domestic_stock.reader import domestic_stock_data_reader
 from data_ver2.market_index.reader import market_index_reader
 from data_ver2.make_market_chart import make_market_index_chart
+from data_ver2.base_interest_rate.reader import base_interest_rate_reader
 
 #make_market_chart(gold_reader(20250721, 20260721, "M04020000", "KRX Gold"))
 #market_index_reader(start, end, category, ticker, name):
@@ -38,11 +39,6 @@ make_market_index_chart(market_index_reader(20250721, 20260721, "bond", "KR3YT%3
 #------------------------------
 # Base Interest Rate
 #------------------------------
+make_market_index_chart(base_interest_rate_reader(20250721, 20260721, "standardInterest", "USA", "USA Base Interest Rate", "%"))
 
-make_market_index_chart(market_index_reader(20250721, 20260721, "bond", "US30YT%3DRR", "USA Bond 30y", "USD"))
-
-    미국기준금리
-https://m.stock.naver.com/front-api/marketIndex/standardInterest?category=standardInterest&reutersCode=USA&page=1
-
-한국기준금리
-https://m.stock.naver.com/front-api/marketIndex/standardInterest?category=standardInterest&reutersCode=KOR&page=1
+make_market_index_chart(base_interest_rate_reader(20250721, 20260721, "standardInterest", "KOR", "Korea Base Interest Rate", "%"))
