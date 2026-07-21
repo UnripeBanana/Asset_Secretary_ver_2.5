@@ -73,7 +73,7 @@ def make_market_index_chart(df):
     plt.tight_layout()
     name = df.iloc[0]["name"]
     
-    title = f"data/image/{name}.png"
+    title = f"data_ver2/image/{name}.png"
     
     plt.savefig(
         title,
