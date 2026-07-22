@@ -225,6 +225,10 @@ https://m.stock.naver.com/marketindex/home/major/exchange/bond
 -> F12 -> Network -> Fetch/XHR -> prices?category=exchange&reutersCode=.DXY&page=1 뭐 이런게 있음. -> Headers에서 링크 받아오면 됨.
 
 
+FRED
+https://fred.stlouisfed.org/
+
+
 국내주식 읽어오기
 https://m.stock.naver.com/front-api/external/chart/domestic/info?symbol=005930&requestType=1&startTime=20240211&endTime=20251027&timeframe=day
 -> startTime, endTime 수정하면 데이터 전체적으로 확인하기 쌉가능
