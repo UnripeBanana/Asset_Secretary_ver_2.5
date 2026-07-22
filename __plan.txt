@@ -51,6 +51,9 @@ Financial markets that react to macroeconomic changes.
 
 United States
 - US 2-Year Treasury Yield
+미국국채2년
+https://m.stock.naver.com/front-api/marketIndex/prices?category=bond&reutersCode=US2YT%3DRR&page=1
+
 - US 10-Year Treasury Yield
 미국국채10년
 https://m.stock.naver.com/front-api/marketIndex/prices?category=bond&reutersCode=US10YT%3DRR&page=1
@@ -80,7 +83,7 @@ https://m.stock.naver.com/front-api/marketIndex/prices?category=bond&reutersCode
 
 ### Foreign Exchange
 - USD/KRW
-달러/원 환율 읽어오기 (page 조정 시 과거 데이터 볼 수 있음)
+달러/원 환율
 https://m.stock.naver.com/front-api/marketIndex/prices?category=exchange&reutersCode=FX_USDKRW&page=1
 "exchange", "FX_USDKRW", "Dollar Won Exchange"
 
@@ -90,11 +93,16 @@ https://m.stock.naver.com/front-api/marketIndex/prices?category=exchange&reuters
 "exchange", ".DXY", "Dollar Index"
 
 - USD/JPY
+달러/엔 환율
+https://m.stock.naver.com/front-api/marketIndex/prices?category=exchangeWorld&reutersCode=USDJPY&page=1
+
 - EUR/USD
+달러/유로 환율
+https://m.stock.naver.com/front-api/marketIndex/prices?category=exchangeWorld&reutersCode=USDEUR&page=1
 
 ### Commodities
 - Gold
-금 차트 읽어오기 (page 조정 시 과거 데이터 볼 수 있음)
+국내 금
 https://m.stock.naver.com/front-api/marketIndex/prices?category=metals&reutersCode=M04020000&page=1
 "metals", "M04020000", "KRX Gold"
 
@@ -118,10 +126,16 @@ https://m.stock.naver.com/front-api/marketIndex/prices?category=energy&reutersCo
 "energy", "LCOcv1", "Brent Crude"
 
 - Natural Gas
+천연가스
+https://m.stock.naver.com/front-api/marketIndex/prices?category=energy&reutersCode=NGcv1&page=1
+
 - Copper
+구리
+https://m.stock.naver.com/front-api/marketIndex/prices?category=metals&reutersCode=CMCU0&page=1
 
 ### Market Volatility
 - VIX
+https://m.stock.naver.com/front-api/stock/foreign/index/price/list?code=.VIX&page=1&pageSize=50
 
 ### Credit Risk
 - CDS
@@ -137,10 +151,20 @@ Asset prices that reflect market reactions.
 
 ### Equity Indices
 - KOSPI
+(URL 기본값이 조금 다르게 생김. 일봉, 주봉, 월봉 그리기 가능)
+https://m.stock.naver.com/front-api/stock/domestic/index/price/list?code=KOSPI&page=1&pageSize=50
+
 - KOSDAQ
+https://m.stock.naver.com/front-api/stock/domestic/index/price/list?code=KOSDAQ&page=1&pageSize=50
+
 - S&P 500
+https://m.stock.naver.com/front-api/stock/foreign/index/price/list?code=.INX&page=1&pageSize=50
+
 - NASDAQ
+https://m.stock.naver.com/front-api/stock/foreign/index/price/list?code=.IXIC&page=1&pageSize=50
+
 - Russell 2000
+
 
 ### Sectors
 - Semiconductors
