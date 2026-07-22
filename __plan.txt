@@ -1,3 +1,36 @@
+# FRED DATA
+f"https://api.stlouisfed.org/fred/series/observations?series_id={SERIES_ID}&observation_start=2025-01-01&observation_end=2026-07-22&api_key={MY_API}&file_type=json"
+
+FEDFUNDS      미국 기준금리
+DGS2          미국채 2년
+DGS10         미국채 10년
+DGS30         미국채 30년
+DGS3MO        미국채 3개월
+
+CPIAUCSL      CPI
+CPILFESL      Core CPI
+PPIACO        PPI
+
+UNRATE        실업률
+ICSA          신규 실업수당
+PAYEMS        비농업고용
+
+GDP           GDP
+GDPC1         Real GDP
+
+M2SL          M2
+
+T5YIE         5Y Breakeven
+T10YIE        10Y Breakeven
+
+BAA           회사채
+AAA           AAA 회사채
+
+USREC         경기침체 여부
+
+NFCI          Financial Stress
+
+
 1. Economic Drivers
 ===================
 
